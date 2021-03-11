@@ -2,8 +2,13 @@ const canvas = document.querySelector("canvas");
 
 const ctx = canvas.getContext("2d");
 
+const scoreCount = document.getElementById("score");
+const highScoreCount = document.getElementById("highscore");
+
 let primary = "#6AC502";
 let secondary = "#AE17DB";
+let highscore = 0;
+let nameHighScore = "";
 
 const grid = 32; //size of 1 cell
 let count = 0; //to manipulate frames per sec
@@ -80,15 +85,27 @@ function startGame() {
 
     for (let i = index + 1; i < snake.cells.length; i++) {
       if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
+        if (localStorage.getItem("highscore", highscore) < score) {
+          highscore = score;
+          localStorage.setItem("highscore", highscore);
+          nameHighScore = prompt("You beat the highscore!! What's your name?");
+          localStorage.setItem("name", nameHighScore);
+          window.location.reload();
+        }
         window.location.reload();
       }
     }
   });
+
   // Draw score
-  ctx.font = "72px Helvetica";
-  ctx.fillStyle = "rgba(255, 255, 255, 0.25)";
-  ctx.textAlign = "center";
-  ctx.fillText(score, canvas.width / 2, canvas.height / 2);
+  // ctx.font = "72px Helvetica";
+  // ctx.fillStyle = "rgba(255, 255, 255, 0.25)";
+  // ctx.textAlign = "center";
+  // ctx.fillText(score, canvas.width / 2, canvas.height / 2);
+  scoreCount.textContent = `Your Score: ${score}`;
+  highScoreCount.textContent = `${localStorage.getItem(
+    "name"
+  )}'s HighScore: ${localStorage.getItem("highscore")}`;
 }
 
 function getRandomInt(min, max) {
