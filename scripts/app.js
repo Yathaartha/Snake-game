@@ -125,6 +125,18 @@ document.addEventListener("keydown", function (evt) {
   } else if (evt.which === 40 && snake.vy === 0) {
     snake.vy = grid;
     snake.vx = 0;
+  } else if (evt.which === 65 && snake.vx === 0) {
+    snake.vx = -grid;
+    snake.vy = 0;
+  } else if (evt.which === 87 && snake.vy === 0) {
+    snake.vy = -grid;
+    snake.vx = 0;
+  } else if (evt.which === 68 && snake.vx === 0) {
+    snake.vx = grid;
+    snake.vy = 0;
+  } else if (evt.which === 83 && snake.vy === 0) {
+    snake.vy = grid;
+    snake.vx = 0;
   }
 });
 
