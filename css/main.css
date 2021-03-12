@@ -53,7 +53,8 @@ canvas {
   border-radius: 5px;
   padding: 1rem 0.5rem;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  color: #fff; }
+  color: #fff;
+  text-align: center; }
 
 #highscore {
   display: inline-block;
@@ -65,7 +66,8 @@ canvas {
   border-radius: 5px;
   padding: 1rem 0.5rem;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  color: #fff; }
+  color: #fff;
+  text-align: center; }
 
 @media (max-width: 768px) {
   canvas {
@@ -81,14 +83,21 @@ canvas {
   .invisible {
     visibility: visible; } }
 
-@media (max-height: 500px) {
+@media (max-width: 450px) {
+  canvas {
+    height: 192px;
+    width: 384px; }
+  .invisible {
+    visibility: visible; } }
+
+@media (max-height: 680px) {
   .top {
     display: none; }
   .bottom {
     display: none; }
   canvas {
     height: 256px;
-    width: 576px; }
+    width: 384px; }
   #score {
     font-size: 1rem;
     top: 0.25rem;
