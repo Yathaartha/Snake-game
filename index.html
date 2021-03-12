@@ -5,14 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Snake Game</title>
+    <script
+      src="https://kit.fontawesome.com/538af86eaa.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
     <div id="score"></div>
     <div class="content">
       <h1 class="top">SNAKE</h1>
-      <canvas height="448px" width="768px"></canvas>
       <h1 class="bottom">GAME</h1>
+      <br />
+      <canvas height="448px" width="768px"></canvas>
+      <div class="buttons invisible">
+        <div class="up-arrow">
+          <button class="up"><i class="fas fa-arrow-up fa-2x"></i></button>
+        </div>
+        <div class="left-right-arrow">
+          <button class="left"><i class="fas fa-arrow-left fa-2x"></i></button
+          >&nbsp;&nbsp;&nbsp;
+          <button class="right">
+            <i class="fas fa-arrow-right fa-2x"></i>
+          </button>
+        </div>
+        <div class="down-arrow">
+          <button class="down"><i class="fas fa-arrow-down fa-2x"></i></button>
+        </div>
+      </div>
     </div>
     <div id="highscore"></div>
     <script src="scripts/app.js"></script>

@@ -5,6 +5,11 @@ const ctx = canvas.getContext("2d");
 const scoreCount = document.getElementById("score");
 const highScoreCount = document.getElementById("highscore");
 
+const upBtn = document.querySelector(".up");
+const leftBtn = document.querySelector(".left");
+const rightBtn = document.querySelector(".right");
+const downBtn = document.querySelector(".down");
+
 let primary = "#6AC502";
 let secondary = "#AE17DB";
 let highscore = 0;
@@ -135,6 +140,34 @@ document.addEventListener("keydown", function (evt) {
     snake.vx = grid;
     snake.vy = 0;
   } else if (evt.which === 83 && snake.vy === 0) {
+    snake.vy = grid;
+    snake.vx = 0;
+  }
+});
+
+upBtn.addEventListener("click", () => {
+  if (snake.vy === 0) {
+    snake.vy = -grid;
+    snake.vx = 0;
+  }
+});
+
+leftBtn.addEventListener("click", () => {
+  if (snake.vx === 0) {
+    snake.vx = -grid;
+    snake.vy = 0;
+  }
+});
+
+rightBtn.addEventListener("click", () => {
+  if (snake.vx === 0) {
+    snake.vx = grid;
+    snake.vy = 0;
+  }
+});
+
+downBtn.addEventListener("click", () => {
+  if (snake.vy === 0) {
     snake.vy = grid;
     snake.vx = 0;
   }
